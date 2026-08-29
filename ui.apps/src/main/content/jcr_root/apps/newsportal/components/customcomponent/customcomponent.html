@@ -1,0 +1,83 @@
+<sly data-sly-use.model="com.karthik.newsportal.core.models.customcomponent.CustomComponent">
+
+    <div class="custom-component">
+
+        <!-- Title -->
+        <h1 class="custom-component__title"
+            data-sly-test="${model.title}">
+            ${model.title}
+        </h1>
+
+
+        <!-- Description -->
+        <div class="custom-component__description"
+             data-sly-test="${model.description}"
+             style="background-color: ${model.descriptionBackgroundColor @ context='styleString'}; color: ${model.descriptionTextColor @ context='styleString'};">
+
+            ${model.description @ context='html'}
+
+        </div>
+
+
+        <!-- Images -->
+        <section class="custom-component__section"
+                 data-sly-test="${model.images}">
+
+            <h2 class="custom-component__section-title">
+                Images
+            </h2>
+
+            <div class="custom-component__images">
+
+                <sly data-sly-list.image="${model.images}">
+
+                    <div class="custom-component__image-wrapper">
+
+                        <img class="custom-component__image"
+                             src="${image}"
+                             alt="${model.title}"
+                             loading="lazy">
+
+                    </div>
+
+                </sly>
+
+            </div>
+
+        </section>
+
+
+        <!-- Videos -->
+        <section class="custom-component__section"
+                 data-sly-test="${model.videos}">
+
+            <h2 class="custom-component__section-title">
+                Videos
+            </h2>
+
+            <div class="custom-component__videos">
+
+                <sly data-sly-list.video="${model.videos}">
+
+                    <div class="custom-component__video-wrapper">
+
+                        <video class="custom-component__video"
+                               controls
+                               preload="metadata">
+
+                            <source src="${video}" type="video/webm">
+                            Your browser does not support the video tag.
+
+                        </video>
+
+                    </div>
+
+                </sly>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</sly>
