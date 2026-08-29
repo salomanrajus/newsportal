@@ -9,7 +9,6 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
-		resourceType= {"newsportal/components/customcomponent"},
 		defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 public class CustomComponent {
 	
@@ -54,5 +53,4 @@ public class CustomComponent {
 	public List<String> getVideos() {
 		return videos;
 	}
-	
 }
