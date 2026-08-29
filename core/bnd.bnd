@@ -1,3 +1,6 @@
+Export-Package: \
+    com.karthik.newsportal.core.models.customcomponent
+
 Import-Package: \
   com.day.cq.*;version='[1.0,3)',\
   org.apache.sling.*;version='[1.0,3)',\
